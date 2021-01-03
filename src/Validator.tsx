@@ -11,6 +11,7 @@ You can leave it empty, but then how can I respond to you? If you REALLY cannot 
 const NO_MESSAGE_TEXT = "Hey,\nit looks as if you have left the message field empty.";
 
 // SEE SOURCE: https://emailregex.com/
+//eslint-disable-next-line
 const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 

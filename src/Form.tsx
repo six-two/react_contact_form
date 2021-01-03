@@ -44,8 +44,8 @@ const Form = (props: Props) => {
         <h2>Email</h2>
         <input id="email" type="text" placeholder="Required for me to respond" onChange={onChange("email")} />
         <h2>Message</h2>
-        <textarea placeholder="You can write this message in English or German." onChange={onChange("message")} />
-        <button onClick={submit}>Send</button>
+        <textarea placeholder="You can write this message in English or German. If you need to send me a file, upload it somewhere (Dropbox, Mega, etc) and just put the link here." onChange={onChange("message")} />
+        <button onClick={submit}>Send message</button>
     </div>
 }
 
