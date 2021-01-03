@@ -1,6 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
+const showConfirmDialog = () => {
+  confirmAlert({
+    title: 'Confirm to submit',
+    message: 'Are you sure to do this.',
+    buttons: [
+      {
+        label: 'Yes',
+        onClick: () => alert('Click Yes')
+      },
+      {
+        label: 'No',
+        onClick: () => alert('Click No')
+      }
+    ]
+  });
+}
 
 function App() {
   return (
@@ -18,6 +37,8 @@ function App() {
         >
           Learn React
         </a>
+
+        <button onClick={showConfirmDialog}>Show confirm dialog</button>
       </header>
     </div>
   );
