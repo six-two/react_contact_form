@@ -36,14 +36,10 @@ const Form = (props: Props) => {
         }
     }
     return <div className="form">
-        <div className="row">
-            <label htmlFor="name">Name</label>
-            <input id="name" type="text" placeholder="Optional" onChange={onChange("name")} />
-        </div>
-        <div className="row">
-            <label htmlFor="email">Email</label>
-            <input id="email" type="text" placeholder="Required for me to respond" onChange={onChange("email")} />
-        </div>
+        <h2>Name</h2>
+        <input id="name" type="text" placeholder="Optional" onChange={onChange("name")} />
+        <h2>Email</h2>
+        <input id="email" type="text" placeholder="Required for me to respond" onChange={onChange("email")} />
         <h2>Message</h2>
         <textarea placeholder="You can write this message in English or German." onChange={onChange("message")} />
         <button onClick={submit}>Send</button>

@@ -1,0 +1,23 @@
+#root {
+    .form {
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        input,
+        button,
+        textarea {
+            display: block;
+            margin: auto;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: min(300px, 100%);
+        }
+    }
+}

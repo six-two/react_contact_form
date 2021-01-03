@@ -1,5 +1,5 @@
 import Form from './Form';
-import './App.css';
+import './App.scss';
 
 // TODO: Why does my test messsage not appear in the dashboard?
 
