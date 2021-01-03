@@ -1,0 +1,8 @@
+title: Contact me
+description: A web contact from to leave me a message
+menu:
+  - title: Source code
+    url: "https://github.com/six-two/react_contact_form"
+  - title: My other projects
+    url: "https://projects.six-two.dev/"
+no_donate_banner: Asking for donations on a contact form is bad manners :p
