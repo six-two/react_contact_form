@@ -31,9 +31,12 @@ const Form = (props: Props) => {
         }
     };
     const submit = () => {
-        if (validate(data)) {
-            submitForm(data);
+        const trimmed_data: MyFormData = {
+            name: data.name.trim(),
+            email: data.email.trim(),
+            message: data.message.trim(),
         }
+        validate(trimmed_data).then((valid) => valid && submitForm(trimmed_data));
     }
     return <div className="form">
         <h2>Name</h2>
