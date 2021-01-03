@@ -10,7 +10,7 @@ const PRODUCTION_HOST = "six-two.dev";
 
 // The backend URL, to which the data should be posted (in a production environment)
 // CHANGE THIS VALUE, otherwise I will receive your data
-const PRODUCTION_SUBMIT_URL = "https://getform.io/f/d709b72b-d30b-4316-9cc1-4d1d33778a8b";
+const PRODUCTION_SUBMIT_URL = "https://formcarry.com/s/mhlqebsaCq";
 // The backend URL, to which the data should be posted (in a development environment).
 // Leave this field empty, to not post the data
 const DEVELOPMENT_SUBMIT_URL = "";
