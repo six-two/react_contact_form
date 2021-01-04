@@ -1,6 +1,8 @@
 title: Contact me
 description: A web contact from to leave me a message
 menu:
+  - title: Other ways to contact me
+    url: "https://six-two.dev/#contact"
   - title: Source code
     url: "https://github.com/six-two/react_contact_form"
   - title: My other projects
