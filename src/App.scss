@@ -35,3 +35,10 @@
         }
     }
 }
+
+
+.react-confirm-alert-body {
+    // The default size is 400px.
+    // This makes it more responsive, and is not broken on mobile
+    width: min(70vw, 500px);
+}
