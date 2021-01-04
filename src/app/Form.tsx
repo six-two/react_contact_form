@@ -10,7 +10,7 @@ export interface MyFormData {
     message: string,
 }
 
-export const DEFAULT_FORM_DATA: MyFormData = {
+const DEFAULT_FORM_DATA: MyFormData = {
     name: "",
     email: "",
     message: "",

@@ -1,5 +1,5 @@
-import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css';
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 export const showWarningDialog = (title: string, message: string, allow_send_anyway: boolean) => {
     const go_back_text = 'Go back';

@@ -18,8 +18,6 @@ const OVERSIZE_MESSAGE = `That's A LOT of text. Please keep the total message si
 const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
-
-
 export async function validate(data: MyFormData): Promise<boolean> {
     try {
         // First show the error messages, that can not be bypassed
