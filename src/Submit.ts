@@ -1,4 +1,5 @@
 import axios from "axios";
+import { showInfoDialog } from "./Dialogs";
 import { MyFormData } from "./Form";
 
 // ================== YOU WILL NEED TO ADJUST SOME OF THESE VALUES! ==========================
@@ -13,7 +14,10 @@ const PRODUCTION_HOST = "six-two.dev";
 const PRODUCTION_SUBMIT_URL = "https://formcarry.com/s/mhlqebsaCq";
 // The backend URL, to which the data should be posted (in a development environment).
 // Leave this field empty, to not post the data
-const DEVELOPMENT_SUBMIT_URL = "";
+const DEVELOPMENT_SUBMIT_URL = "https://httpbin.org/status/200";
+// Where to send bug reports too
+const BUG_EMAIL = "contact-form-bugs@six-two.dev";
+const ERROR_MESSAGE = `Please try again. If this keeps happening please send me an email (to ${BUG_EMAIL}) with your inputs, so that I can track the bug down.`;
 
 
 const getSubmitUrl = () => {
@@ -25,42 +29,34 @@ const getSubmitUrl = () => {
     }
 }
 
+async function internalPostData(post_url: string, data: MyFormData) {
+    try {
+        const response = await axios.post(
+            post_url,
+            data,
+            {
+                headers: {
+                    Accept: "application/json"
+                }
+            }
+        );
+        console.log("Form submit response:", response);
+        if (response.status === 200) { // They use "response.data.success" in the docs
+            showInfoDialog("Success", "Your message has been sent");
+        } else {
+            showInfoDialog("Backend error", ERROR_MESSAGE);
+        }
+    } catch (error) {
+        console.error("An error occured while posting the form data:", error);
+        showInfoDialog("Internal error", ERROR_MESSAGE);
+    }
+}
 
 export const submitForm = (data: MyFormData) => {
     console.log("Posting form data:", data);
     const post_url = getSubmitUrl();
     if (post_url) {
-        axios
-            .post(
-                post_url,
-                data,
-                {
-                    headers: {
-                        Accept: "application/json"
-                    }
-                }
-            )
-            .then((response: any) => {
-                console.log("Form submit response:", response);
-                /* Response looks like the following object: 
-
-config: Object { url: "https://getform.io/f/d709b72b-d30b-4316-9cc1-4d1d33778a8b", method: "post", data: "{\"name\":\"n\",\"email\":\"e\",\"message\":\"m\"}", … }
-​
-data: Object { success: true, formValues: [] }
-​
-headers: Object { "cache-control": "no-cache, private", "content-type": "application/json" }
-​
-request: XMLHttpRequest { readyState: 4, timeout: 0, withCredentials: false, … }
-​
-status: 200
-​
-statusText: "OK"
-​
-<prototype>: Object { … } */
-            })
-            .catch((error: any) => {
-                console.error("An error occured while submitting the form:", error);
-            });
+        internalPostData(post_url, data);//Ignore the promise
     } else {
         console.warn("The submit URL is empty, so no data were posted");
     }
