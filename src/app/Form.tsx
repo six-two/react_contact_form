@@ -45,7 +45,7 @@ const focus = (ref: React.RefObject<unknown>) => {
 const EnterKeyHandler = (props: EnterKeyHandlerProps) => {
     let focusNext = () => {
         const focusNextElement = () => focus(props.next_focus_ref);
-        // The timeout prevents the textarea adding a new line (caused by the samne event)
+        // The timeout prevents the textarea from creating a new line (caused by the same event)
         setTimeout(focusNextElement, 10);
     };
     return <KeyboardEventHandler
