@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { createRef, useState } from "react";
+import KeyboardEventHandler from 'react-keyboard-event-handler';
 import { submitForm } from "./Submit";
 import { validate } from "./Validator";
 
@@ -8,6 +9,11 @@ export interface MyFormData {
     name: string,
     email: string,
     message: string,
+}
+
+interface EnterKeyHandlerProps {
+    next_focus_ref: any,
+    children: any,
 }
 
 const DEFAULT_FORM_DATA: MyFormData = {
@@ -32,8 +38,27 @@ const validateAndSubmit = (data: MyFormData) => {
     validate(data).then((valid) => valid && submitForm(data));
 }
 
+const focus = (ref: React.RefObject<unknown>) => {
+    ref.current && (ref.current as any).focus();
+}
+
+const EnterKeyHandler = (props: EnterKeyHandlerProps) => {
+    let focusNext = () => {
+        const focusNextElement = () => focus(props.next_focus_ref);
+        // The timeout prevents the textarea adding a new line (caused by the samne event)
+        setTimeout(focusNextElement, 10);
+    };
+    return <KeyboardEventHandler
+        handleKeys={["enter"]}
+        onKeyEvent={focusNext}>
+        {props.children}
+    </KeyboardEventHandler>
+}
+
 const Form = (props: Props) => {
     const [data, setData] = useState(DEFAULT_FORM_DATA);
+    const email_ref: React.RefObject<HTMLInputElement> = createRef();
+    const message_ref: React.RefObject<HTMLTextAreaElement> = createRef();
     const onChange = (fieldName: string) => {
         return (e: any) => {
             const copy = { ...data };
@@ -47,11 +72,15 @@ const Form = (props: Props) => {
     };
     return <div className="form">
         <h2>Name</h2>
-        <input type="text" placeholder="Optional" value={data.name} onChange={onChange("name")} />
+        <EnterKeyHandler next_focus_ref={email_ref}>
+            <input autoFocus type="text" placeholder="Optional" value={data.name} onChange={onChange("name")} />
+        </EnterKeyHandler>
         <h2>Email</h2>
-        <input type="email" placeholder="Where to send my response" value={data.email} onChange={onChange("email")} />
+        <EnterKeyHandler next_focus_ref={message_ref}>
+            <input ref={email_ref} type="email" placeholder="Where to send my response" value={data.email} onChange={onChange("email")} />
+        </EnterKeyHandler>
         <h2>Message</h2>
-        <textarea placeholder={TEXT_AREA_PLACEHOLDER} onChange={onChange("message")} />
+        <textarea ref={message_ref} placeholder={TEXT_AREA_PLACEHOLDER} onChange={onChange("message")} />
         <button onClick={() => validateAndSubmit(data)}>Send message</button>
     </div>
 }
