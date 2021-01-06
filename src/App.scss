@@ -29,7 +29,8 @@
             font-size    : 20px;
             cursor       : pointer;
 
-            &:hover {
+            &:hover,
+            &:focus {
                 text-decoration: underline;
             }
         }

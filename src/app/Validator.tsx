@@ -1,11 +1,6 @@
 import { showWarningDialog } from "./Dialogs";
 import { MyFormData } from "./Form";
 
-const INVALID_EMAIL_ADDRESS = `Hey,
-the email address you entered does not look as if it is a valid email address. Please check it again. If you get this message again, just click "Send anyway".
-If you do not give me a valid email address, I will not be able to respond to you.`;
-const NO_EMAIL_TEXT = `Hey,\nit looks as if you have left the email field empty.
-You can leave it empty, but then how can I respond to you? If you REALLY cannot give me an email address, please include instruction of how to contact you in the message text`;
 const NO_MESSAGE_TEXT = "Hey,\nit looks as if you have left the message field empty.";
 const MAX_TOTAL_SIZE = 32 * 1024;
 // According to formcarry customer support their maximum form submission size is 35MiB (35*1024 bytes)
@@ -32,8 +27,12 @@ export async function validate(data: MyFormData): Promise<boolean> {
 
         // Then show the warnings you can skip
         if (!data.email) {
+            const NO_EMAIL_TEXT = `Hey,\nit looks as if you have left the email field empty.
+                                   You can leave it empty, but then how can I respond to you? If you REALLY cannot give me an email address, please include instruction of how to contact you in the message text`;
             await showWarningDialog("Empty email address", NO_EMAIL_TEXT, true);
         } else if (!EMAIL_REGEX.test(data.email)) {
+            const INVALID_EMAIL_ADDRESS = `Hey, the email address you entered (${data.email}) does not look as if it is an email address. If you get this message again, just click "Send anyway".
+                                           If you do not give me a valid email address, I will not be able to respond to you.`;
             await showWarningDialog("Potentially invalid email address", INVALID_EMAIL_ADDRESS, true);
         }
 

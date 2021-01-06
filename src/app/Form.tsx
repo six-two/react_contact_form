@@ -47,9 +47,9 @@ const Form = (props: Props) => {
     };
     return <div className="form">
         <h2>Name</h2>
-        <input id="name" type="text" placeholder="Optional" onChange={onChange("name")} />
+        <input type="text" placeholder="Optional" value={data.name} onChange={onChange("name")} />
         <h2>Email</h2>
-        <input id="email" type="text" placeholder="Where to send my response" onChange={onChange("email")} />
+        <input type="email" placeholder="Where to send my response" value={data.email} onChange={onChange("email")} />
         <h2>Message</h2>
         <textarea placeholder={TEXT_AREA_PLACEHOLDER} onChange={onChange("message")} />
         <button onClick={() => validateAndSubmit(data)}>Send message</button>
