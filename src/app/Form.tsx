@@ -1,11 +1,9 @@
 import { createRef, useState } from "react";
 import KeyboardEventHandler from 'react-keyboard-event-handler';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { submitForm } from "./Submit";
 import { validate } from "./Validator";
 import { LanguageChooserContextAdapter } from './LanguageChooser';
-
-const TEXT_AREA_PLACEHOLDER = "You can write this message in English or German. If you need to send me a file, upload it somewhere (Dropbox, Mega, etc) and just put the link here.";
 
 export interface MyFormData {
     name: string,
@@ -58,6 +56,7 @@ const EnterKeyHandler = (props: EnterKeyHandlerProps) => {
 }
 
 const Form = (props: Props) => {
+    const intl = useIntl();
     const [data, setData] = useState(DEFAULT_FORM_DATA);
     const email_ref: React.RefObject<HTMLInputElement> = createRef();
     const message_ref: React.RefObject<HTMLTextAreaElement> = createRef();
@@ -77,14 +76,27 @@ const Form = (props: Props) => {
         <LanguageChooserContextAdapter />
         <h2><FormattedMessage id="name" /></h2>
         <EnterKeyHandler next_focus_ref={email_ref}>
-            <input autoFocus type="text" placeholder="Optional" value={data.name} onChange={onChange("name")} />
+            <input
+                autoFocus
+                type="text"
+                placeholder={intl.formatMessage({ id: "name_placeholder" })}
+                value={data.name}
+                onChange={onChange("name")} />
         </EnterKeyHandler>
         <h2><FormattedMessage id="email" /></h2>
         <EnterKeyHandler next_focus_ref={message_ref}>
-            <input ref={email_ref} type="email" placeholder="Where to send my response" value={data.email} onChange={onChange("email")} />
+            <input
+                ref={email_ref}
+                type="email"
+                placeholder={intl.formatMessage({ id: "email_placeholder" })}
+                value={data.email}
+                onChange={onChange("email")} />
         </EnterKeyHandler>
         <h2><FormattedMessage id="message" /></h2>
-        <textarea ref={message_ref} placeholder={TEXT_AREA_PLACEHOLDER} onChange={onChange("message")} />
+        <textarea
+            ref={message_ref}
+            placeholder={intl.formatMessage({ id: "message_placeholder" })}
+            onChange={onChange("message")} />
         <button onClick={() => validateAndSubmit(data)}>
             <FormattedMessage id="send_button" />
         </button>

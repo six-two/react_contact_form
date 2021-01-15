@@ -9,7 +9,7 @@ import './App.scss';
 // internationalize:  https://formatjs.io/docs/getting-started/installation/
 // - get / set the language via the url
 // - create a generic Internationalisation.tsx file that I can drop into any project
-// - translate placeholders, error messages, etc
+// - translate error messages, buttons, etc
 // - make the select look consistent across platforms
 // IDEA: Add internationalisation to the react_template (it could get the language from the url)
 

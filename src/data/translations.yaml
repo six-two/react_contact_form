@@ -1,10 +1,17 @@
 name: Name
+name_placeholder: Optional
 email:
   en: Email
   de: E-Mail
+email_placeholder:
+  en: Where should I send my response?
+  de: Wohin soll ich meine Antwort senden?
 message:
   en: Message
   de: Nachricht
+message_placeholder:
+  en: Please write your message here. If you need to send me a file, upload it somewhere (Dropbox, Mega, Google drive etc) and just put the link here.
+  de: Bitte geben Sie hier Ihre Nachricht ein. Falls Sie mir eine Datei senden wollen, laden Sie diese irgendwo hoch (z.B. bei Dropbox, Mega, Google Drive, etc) und fügen die den Link hier ein.
 send_button:
   en: Send message
   de: Nachricht versenden
