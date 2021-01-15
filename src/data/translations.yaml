@@ -1,0 +1,13 @@
+headings:
+  a:
+    en: A in en
+    de: A in de
+  b:
+    en: B in en
+    de: B in de
+  c:
+    d:
+      en: D in en
+      de: D in de
+      es: D in es
+    e: same in all languages
