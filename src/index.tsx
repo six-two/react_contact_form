@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Form from './app/Form';
 import reportWebVitals from './reportWebVitals';
-import Localizer from './app/Internationalisation';
+import Localizer from './app/i18n/ContextLocalizer';
 import './App.scss';
 
 // =============== TODO ================

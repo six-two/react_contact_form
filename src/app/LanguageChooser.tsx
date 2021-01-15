@@ -1,4 +1,4 @@
-import { LanguageContext } from "./Internationalisation";
+import { LanguageContext } from "./i18n/ContextLocalizer";
 
 interface Props {
     lang: string,

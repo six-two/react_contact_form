@@ -22,8 +22,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build-json": "pip3 install pyyaml && python3 src/data/generate_jsons.py",
+    "start": "npm run build-json && react-scripts start",
+    "build-json": "pip3 install pyyaml && python3 src/app/i18n/generate_jsons.py",
     "build-js": "react-scripts build",
     "build": "npm run build-json && npm run build-js",
     "test": "react-scripts test",

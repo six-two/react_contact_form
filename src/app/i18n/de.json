@@ -1,0 +1,9 @@
+{
+  "email": "E-Mail",
+  "email_placeholder": "Wohin soll ich meine Antwort senden?",
+  "message": "Nachricht",
+  "message_placeholder": "Bitte geben Sie hier Ihre Nachricht ein. Falls Sie mir eine Datei senden wollen, laden Sie diese irgendwo hoch (z.B. bei Dropbox, Mega, Google Drive, etc) und f\u00fcgen die den Link hier ein.",
+  "name": "Name",
+  "name_placeholder": "Optional",
+  "send_button": "Nachricht versenden"
+}

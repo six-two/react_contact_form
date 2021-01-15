@@ -1,0 +1,9 @@
+{
+  "email": "Email",
+  "email_placeholder": "Where should I send my response?",
+  "message": "Message",
+  "message_placeholder": "Please write your message here. If you need to send me a file, upload it somewhere (Dropbox, Mega, Google drive etc) and just put the link here.",
+  "name": "Name",
+  "name_placeholder": "Optional",
+  "send_button": "Send message"
+}
