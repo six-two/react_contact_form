@@ -1,7 +1,9 @@
 import { createRef, useState } from "react";
 import KeyboardEventHandler from 'react-keyboard-event-handler';
+import { FormattedMessage } from 'react-intl';
 import { submitForm } from "./Submit";
 import { validate } from "./Validator";
+import { LanguageChooserContextAdapter } from './LanguageChooser';
 
 const TEXT_AREA_PLACEHOLDER = "You can write this message in English or German. If you need to send me a file, upload it somewhere (Dropbox, Mega, etc) and just put the link here.";
 
@@ -71,17 +73,21 @@ const Form = (props: Props) => {
         }
     };
     return <div className="form">
-        <h2>Name</h2>
+        <h2>Language / Sprache</h2>
+        <LanguageChooserContextAdapter />
+        <h2><FormattedMessage id="name" /></h2>
         <EnterKeyHandler next_focus_ref={email_ref}>
             <input autoFocus type="text" placeholder="Optional" value={data.name} onChange={onChange("name")} />
         </EnterKeyHandler>
-        <h2>Email</h2>
+        <h2><FormattedMessage id="email" /></h2>
         <EnterKeyHandler next_focus_ref={message_ref}>
             <input ref={email_ref} type="email" placeholder="Where to send my response" value={data.email} onChange={onChange("email")} />
         </EnterKeyHandler>
-        <h2>Message</h2>
+        <h2><FormattedMessage id="message" /></h2>
         <textarea ref={message_ref} placeholder={TEXT_AREA_PLACEHOLDER} onChange={onChange("message")} />
-        <button onClick={() => validateAndSubmit(data)}>Send message</button>
+        <button onClick={() => validateAndSubmit(data)}>
+            <FormattedMessage id="send_button" />
+        </button>
     </div>
 }
 
