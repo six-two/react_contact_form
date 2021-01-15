@@ -7,7 +7,6 @@ import './App.scss';
 
 // =============== TODO ================
 // internationalize:  https://formatjs.io/docs/getting-started/installation/
-// - put the translations in external files
 // - get / set the language via the url
 // - create a generic Internationalisation.tsx file that I can drop into any project
 // - translate placeholders, error messages, etc

@@ -23,7 +23,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-json": "pip3 install pyyaml && python3 src/data/generate_jsons.py",
+    "build-js": "react-scripts build",
+    "build": "npm run build-json && npm run build-js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

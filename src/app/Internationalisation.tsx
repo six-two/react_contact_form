@@ -1,5 +1,8 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
+import germanData from '../data/de.json';
+import englishData from '../data/en.json';
+
 
 interface Props {
   children: any;
@@ -16,19 +19,6 @@ const defaultLanguageContextData: LanguageContextData = {
 };
 
 export const LanguageContext = React.createContext(defaultLanguageContextData);
-
-const germanData = {
-  name: "Name",
-  email: "E-Mail",
-  message: "Nachricht",
-  send_button: "Nachricht versenden",
-};
-const englishData = {
-  name: "Name",
-  email: "Email",
-  message: "Message",
-  send_button: "Send message",
-};
 
 const getLangData = (lang: string) => {
   switch (lang) {
