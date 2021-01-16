@@ -1,0 +1,43 @@
+#root {
+    * {
+        box-sizing: border-box;
+    }
+
+    .form {
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        input,
+        textarea {
+            display: block;
+            margin : auto;
+        }
+
+        button {
+            display: block;
+            margin: 25px auto 5px auto;
+        }
+
+        .select-wrapper {
+            margin: auto;
+        }
+
+        textarea {
+            width: 95%;
+            height: 250px;
+            padding: 5px;
+        }
+    }
+}
+
+
+.react-confirm-alert-body {
+    // The default size is 400px.
+    // This makes it more responsive, and is not broken on mobile
+    width: min(70vw, 500px);
+}
+
+@import "button";

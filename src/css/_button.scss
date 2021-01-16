@@ -1,0 +1,66 @@
+#root {
+    select {
+        appearance      : none;
+        outline         : none;
+        border          : none;
+        background-color: transparent;
+        font-family     : inherit;
+        font-size       : inherit;
+        width           : 100%;
+        cursor          : inherit;
+        line-height     : inherit;
+        padding         : 5px;
+        margin          : 0;
+    }
+
+    .select-wrapper {
+        display            : grid;
+        grid-template-areas: "select";
+        align-items        : center;
+        width              : 150px;
+
+        select,
+        &:after {
+            grid-area: select;
+        }
+
+        &:after {
+            content         : "";
+            width           : 0.8em;
+            height          : 0.5em;
+            margin-right    : 10px;
+            background-color: #777;
+            clip-path       : polygon(100% 0%, 0% 0%, 50% 100%);
+            justify-self    : end;
+        }
+    }
+
+    button,
+    select,
+    .button-style {
+        outline         : none;
+        color           : black;
+        font-weight     : bold;
+        background-color: white;
+        border          : 2px solid black;
+        border-radius   : 10px;
+        padding         : 7px 10px;
+        cursor          : pointer;
+        font-size       : 12pt;
+        min-width       : 150px;
+
+
+        &:hover,
+        &:focus {
+            color           : blue;
+            background-color: lightblue;
+            border-color    : blue;
+        }
+
+        &:disabled {
+            color           : black;
+            background-color: gray;
+            cursor          : not-allowed;
+        }
+    }
+}

@@ -7,7 +7,7 @@ interface Props {
 
 export const LanguageChooser = (props: Props) => {
     const onChange = (e: any) => props.setLang(e.target.value);
-    return <div className="lang-select">
+    return <div className="lang-select select-wrapper">
         <select onChange={onChange} value={props.lang}>
             <option value="en">🇺🇸 English</option>
             <option value="de">🇩🇪 Deutsch</option>
