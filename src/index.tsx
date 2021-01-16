@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Form from './app/Form';
 import reportWebVitals from './reportWebVitals';
-import Localizer from './app/i18n/ContextLocalizer';
+import ContextLocalizer from './app/i18n/ContextLocalizer';
 import './App.scss';
 
 // =============== TODO ================
@@ -15,9 +15,9 @@ import './App.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Localizer>
+    <ContextLocalizer handle_url_param={true}>
       <Form />
-    </Localizer>
+    </ContextLocalizer>
   </React.StrictMode>,
   document.getElementById('root')
 );
