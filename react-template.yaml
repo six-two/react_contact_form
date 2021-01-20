@@ -13,3 +13,5 @@ menu:
 no_donate_banner: true
 pre_build:
   - template-tools/i18n/i18n.py <PROJECT>
+post_build:
+  - template-tools/minify.py
