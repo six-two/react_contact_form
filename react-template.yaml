@@ -3,8 +3,13 @@ description: A web contact from to leave me a message
 menu:
   - title: Other ways to contact me
     url: "https://six-two.dev/#contact"
+    id: page-nav-contact
   - title: Source code
     url: "https://github.com/six-two/react_contact_form"
+    id: page-nav-source
   - title: My other projects
     url: "https://projects.six-two.dev/"
+    id: page-nav-projects
 no_donate_banner: true
+pre_build:
+  - template-tools/i18n/i18n.py <PROJECT>
