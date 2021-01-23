@@ -1,6 +1,7 @@
-page-title:
-  en: Contact me
-  de: Kontaktformular
-page-nav-contact:
-  en: Other ways to contact me
-  de: Andere Wege mich zu erreichen
+translations:
+  page-title:
+    en: Contact me
+    de: Kontaktformular
+  page-nav-contact:
+    en: Other ways to contact me
+    de: Andere Wege mich zu erreichen
