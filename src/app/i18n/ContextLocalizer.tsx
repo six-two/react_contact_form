@@ -1,6 +1,6 @@
 import React from 'react';
 import Localizer, { DEFAULT_LANG, sanitizeLanguage } from './Localizer';
-import { getLanguageFromUrl, setLanguageInUrl } from './UrlParameterHandler';
+import { getLanguageFromUrl, setLanguageInUrl, UrlLanguageChangeDetector } from './UrlParameterHandler';
 
 const INITIAL_LANGUAGE = getLanguageFromUrl();
 
@@ -31,10 +31,14 @@ export default function ContextLocalizer(props: Props) {
         }
         setLang(sanitized_value);
     }
+
     const contextData: LanguageContextData = { lang, setLang: setLangWithUrlParam };
     return <LanguageContext.Provider value={contextData}>
         <Localizer lang={lang}>
             {props.children}
         </Localizer>
+        {props.handle_url_param && <UrlLanguageChangeDetector
+            lang={lang}
+            setLang={setLangWithUrlParam} />}
     </LanguageContext.Provider>
 }

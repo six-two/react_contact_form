@@ -1,6 +1,12 @@
+import { useEffect } from 'react';
 import { DEFAULT_LANG, sanitizeLanguage } from './Localizer';
 
 const PARAM_NAME = "lang";
+
+interface Props {
+    lang: string,
+    setLang: (lang: string) => void,
+}
 
 export const getLanguageFromUrl = () => {
     const params = new URLSearchParams(window.location.search);
@@ -19,4 +25,17 @@ export const setLanguageInUrl = (lang: string) => {
         console.log(`Updated URL: "${old_url}" -> "${new_url}"`);
         window.history.replaceState({}, "", new_url);
     }
+}
+
+export const UrlLanguageChangeDetector = (props: Props) => {
+    useEffect(() => {
+        const timer = setInterval(() => {
+            const new_lang = getLanguageFromUrl();
+            if (new_lang !== props.lang) {
+                props.setLang(new_lang);
+            }
+        }, 100);
+        return () => clearInterval(timer);
+    });
+    return null;
 }
