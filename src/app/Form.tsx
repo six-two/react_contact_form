@@ -3,7 +3,6 @@ import KeyboardEventHandler from 'react-keyboard-event-handler';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { submitForm } from "./Submit";
 import { validate } from "./Validator";
-import { LanguageChooserContextAdapter } from './LanguageChooser';
 
 export interface MyFormData {
     name: string,
@@ -72,8 +71,6 @@ const Form = (props: Props) => {
         }
     };
     return <div className="form">
-        <h2>Language / Sprache</h2>
-        <LanguageChooserContextAdapter />
         <h2><FormattedMessage id="name" /></h2>
         <EnterKeyHandler next_focus_ref={email_ref}>
             <input
