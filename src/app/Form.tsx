@@ -1,6 +1,6 @@
 import { createRef, useState } from "react";
 import KeyboardEventHandler from 'react-keyboard-event-handler';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage, useIntl, IntlShape } from 'react-intl';
 import { submitForm } from "./Submit";
 import { validate } from "./Validator";
 
@@ -32,9 +32,9 @@ const trimFormData = (data: MyFormData): MyFormData => {
     }
 }
 
-const validateAndSubmit = (data: MyFormData) => {
+const validateAndSubmit = (intl: IntlShape, data: MyFormData) => {
     data = trimFormData(data);
-    validate(data).then((valid) => valid && submitForm(data));
+    validate(intl, data).then((valid) => valid && submitForm(intl, data));
 }
 
 const focus = (ref: React.RefObject<unknown>) => {
@@ -94,7 +94,7 @@ const Form = (props: Props) => {
             ref={message_ref}
             placeholder={intl.formatMessage({ id: "message_placeholder" })}
             onChange={onChange("message")} />
-        <button onClick={() => validateAndSubmit(data)}>
+        <button onClick={() => validateAndSubmit(intl, data)}>
             <FormattedMessage id="send_button" />
         </button>
     </div>

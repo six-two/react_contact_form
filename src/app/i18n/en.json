@@ -1,9 +1,25 @@
 {
+  "backend_error": "Backend error",
+  "backend_error_description": "Please try again. If this keeps happening please send me an email (to bugs@six-two.dev) with your inputs, so that I can track the bug down.",
   "email": "Email",
   "email_placeholder": "Where should I send my response?",
+  "empty_email_description": "You have not filled out the email field. You can leave it empty, but then how can I respond to you? If you REALLY cannot give me an email address, please include instruction of how to contact you in the message text.",
+  "empty_email_title": "Empty email field",
+  "empty_message_description": "Hey, it looks as if you have left the message field empty.",
+  "empty_message_title": "Message field empty",
+  "go_back": "Go back",
+  "internal_error": "Internal error",
+  "invalid_email_description": "Your email address does not look like an email address. Please check it for typos.",
+  "invalid_email_title": "Invalid email address",
   "message": "Message",
   "message_placeholder": "Please write your message here. If you need to send me a file, upload it somewhere (Dropbox, Mega, Google drive etc) and just put the link here.",
+  "message_sent": "Your message has been sent",
   "name": "Name",
   "name_placeholder": "Optional",
-  "send_button": "Send message"
+  "ok": "Ok",
+  "oversize_message_description": "Your message is too long. If you have big files, just upload them (to Dropbox, Mega.nz, Google drive, etc) and only put the link in the message.",
+  "oversize_message_title": "Message too long",
+  "send_anyway": "Send anyway",
+  "send_button": "Send message",
+  "success": "Success"
 }

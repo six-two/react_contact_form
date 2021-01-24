@@ -1,4 +1,5 @@
 import axios from "axios";
+import { IntlShape } from 'react-intl';
 import { showInfoDialog } from "./Dialogs";
 import { MyFormData } from "./Form";
 
@@ -15,9 +16,6 @@ const PRODUCTION_SUBMIT_URL = "https://formcarry.com/s/mhlqebsaCq";
 // The backend URL, to which the data should be posted (in a development environment).
 // Leave this field empty, to not post the data
 const DEVELOPMENT_SUBMIT_URL = "https://httpbin.org/status/200";
-// Where to send bug reports too
-const BUG_EMAIL = "contact-form-bugs@six-two.dev";
-const ERROR_MESSAGE = `Please try again. If this keeps happening please send me an email (to ${BUG_EMAIL}) with your inputs, so that I can track the bug down.`;
 
 
 const getSubmitUrl = () => {
@@ -29,7 +27,7 @@ const getSubmitUrl = () => {
     }
 }
 
-async function internalPostData(post_url: string, data: MyFormData) {
+async function internalPostData(intl: IntlShape, post_url: string, data: MyFormData) {
     try {
         const response = await axios.post(
             post_url,
@@ -42,21 +40,21 @@ async function internalPostData(post_url: string, data: MyFormData) {
         );
         console.log("Form submit response:", response);
         if (response.status === 200) { // They use "response.data.success" in the docs
-            showInfoDialog("Success", "Your message has been sent");
+            showInfoDialog(intl, "success", "message_sent");
         } else {
-            showInfoDialog("Backend error", ERROR_MESSAGE);
+            showInfoDialog(intl, "backend_error", "backend_error_description");
         }
     } catch (error) {
         console.error("An error occured while posting the form data:", error);
-        showInfoDialog("Internal error", ERROR_MESSAGE);
+        showInfoDialog(intl, "internal_error", "backend_error_description");
     }
 }
 
-export const submitForm = (data: MyFormData) => {
+export const submitForm = (intl: IntlShape, data: MyFormData) => {
     console.log("Posting form data:", data);
     const post_url = getSubmitUrl();
     if (post_url) {
-        internalPostData(post_url, data);//Ignore the promise
+        internalPostData(intl, post_url, data);//Ignore the promise
     } else {
         console.warn("The submit URL is empty, so no data were posted");
     }

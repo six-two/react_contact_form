@@ -1,3 +1,4 @@
+# Form.tsx
 name: Name
 name_placeholder: Optional
 email:
@@ -15,3 +16,55 @@ message_placeholder:
 send_button:
   en: Send message
   de: Nachricht versenden
+
+# Dialogs.tsx
+go_back:
+  en: Go back
+  de: Zurück
+send_anyway:
+  en: Send anyway
+  de: Trotzdem senden
+ok: Ok
+
+# Validator
+empty_email_title:
+  en: Empty email field
+  de: E-Mail Feld ist leer
+empty_email_description:
+  en: You have not filled out the email field. You can leave it empty, but then how can I respond to you? If you REALLY cannot give me an email address, please include instruction of how to contact you in the message text.
+  de: Sie haben das E-Mail Feld leer gelassen. Falls Sie eine Antwort erhalten wollen, füllen Sie bitte das Feld aus. Alternativ können Sie im Nachrichtentext erwähnen, wie ich Sie erreichen kann.
+invalid_email_title:
+  en: Invalid email address
+  de: Ungültige E-Mail Adresse
+invalid_email_description:
+  en: Your email address does not look like an email address. Please check it for typos.
+  de: Ihre E-Mail-Adresse sieht ungültig aus. Bitte stellen Sie sicher, dass sie keinen Tippfehler gemacht haben.
+empty_message_title:
+  en: Message field empty
+  de: Nachrichtfeld ist leer
+empty_message_description:
+  en: Hey, it looks as if you have left the message field empty.
+  de: Hey, das Nachrichtenfeld ist leer.
+oversize_message_title:
+  en: Message too long
+  de: Nachricht zu lang
+oversize_message_description:
+  en: Your message is too long. If you have big files, just upload them (to Dropbox, Mega.nz, Google drive, etc) and only put the link in the message.
+  de: Ihre Nachricht ist zu lang. Falls sie mir große Dateien senden wollen, uploaden Sie diese (z.B. bei Dropbox) und kopieren Sie nur den Link in die Nachricht.
+
+# Submit.ts
+success:
+  en: Success
+  de: Erfolg
+message_sent:
+  en: Your message has been sent
+  de: Ihre Nachricht wurde gesendet
+backend_error:
+  en: Backend error
+  de: Backend Fehler
+backend_error_description:
+  en: Please try again. If this keeps happening please send me an email (to bugs@six-two.dev) with your inputs, so that I can track the bug down.
+  de: Bitte versuchen Sie die Nachricht noch einmal zu senden. Falls dieser Fehler erneut auftritt, senden Sie eine Email an bugs@six-two.dev und ich werde versuchen den Fehler zu beheben
+internal_error:
+  en: Internal error
+  de: Interner Fehler

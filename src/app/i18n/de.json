@@ -1,9 +1,25 @@
 {
+  "backend_error": "Backend Fehler",
+  "backend_error_description": "Bitte versuchen Sie die Nachricht noch einmal zu senden. Falls dieser Fehler erneut auftritt, senden Sie eine Email an bugs@six-two.dev und ich werde versuchen den Fehler zu beheben",
   "email": "E-Mail",
   "email_placeholder": "Wohin soll ich meine Antwort senden?",
+  "empty_email_description": "Sie haben das E-Mail Feld leer gelassen. Falls Sie eine Antwort erhalten wollen, f\u00fcllen Sie bitte das Feld aus. Alternativ k\u00f6nnen Sie im Nachrichtentext erw\u00e4hnen, wie ich Sie erreichen kann.",
+  "empty_email_title": "E-Mail Feld ist leer",
+  "empty_message_description": "Hey, das Nachrichtenfeld ist leer.",
+  "empty_message_title": "Nachrichtfeld ist leer",
+  "go_back": "Zur\u00fcck",
+  "internal_error": "Interner Fehler",
+  "invalid_email_description": "Ihre E-Mail-Adresse sieht ung\u00fcltig aus. Bitte stellen Sie sicher, dass sie keinen Tippfehler gemacht haben.",
+  "invalid_email_title": "Ung\u00fcltige E-Mail Adresse",
   "message": "Nachricht",
   "message_placeholder": "Bitte geben Sie hier Ihre Nachricht ein. Falls Sie mir eine Datei senden wollen, laden Sie diese irgendwo hoch (z.B. bei Dropbox, Mega, Google Drive, etc) und f\u00fcgen die den Link hier ein.",
+  "message_sent": "Ihre Nachricht wurde gesendet",
   "name": "Name",
   "name_placeholder": "Optional",
-  "send_button": "Nachricht versenden"
+  "ok": "Ok",
+  "oversize_message_description": "Ihre Nachricht ist zu lang. Falls sie mir gro\u00dfe Dateien senden wollen, uploaden Sie diese (z.B. bei Dropbox) und kopieren Sie nur den Link in die Nachricht.",
+  "oversize_message_title": "Nachricht zu lang",
+  "send_anyway": "Trotzdem senden",
+  "send_button": "Nachricht versenden",
+  "success": "Erfolg"
 }
